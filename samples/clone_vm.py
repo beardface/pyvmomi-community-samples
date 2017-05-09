@@ -7,7 +7,7 @@ Email: dannbohn@gmail.com
 Clone a VM from template example
 """
 from pyVmomi import vim
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 import atexit
 import argparse
 import getpass
