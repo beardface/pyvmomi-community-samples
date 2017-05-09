@@ -196,7 +196,7 @@ def main():
     args = get_args()
 
     # connect this thing
-    si = SmartConnect(
+    si = SmartConnectNoSSL(
         host=args.host,
         user=args.user,
         pwd=args.password,
