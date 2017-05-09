@@ -8,7 +8,7 @@ Email: laujunbupt0913@163.com
 """
 
 
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 import atexit
 from pyVmomi import vim
 import sys
@@ -138,7 +138,7 @@ def main():
     context = None
     if hasattr(ssl, "_create_unverified_context"):
         context = ssl._create_unverified_context()
-    serviceInstance = SmartConnect(host=args.host,
+    serviceInstance = SmartConnectNoSSL(host=args.host,
                                    user=args.user,
                                    pwd=args.password,
                                    port=args.port,

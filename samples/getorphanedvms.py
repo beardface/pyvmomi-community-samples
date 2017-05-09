@@ -208,7 +208,7 @@ def main():
     try:
         si = None
         try:
-            si = SmartConnect(host=args.host,
+            si = SmartConnectNoSSL(host=args.host,
                               user=args.user,
                               pwd=args.password,
                               port=int(args.port))

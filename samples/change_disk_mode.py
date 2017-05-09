@@ -11,7 +11,7 @@ import atexit
 import requests
 from tools import cli
 from pyVmomi import vim
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 from tools import tasks
 
 
@@ -87,7 +87,7 @@ def get_obj(content, vim_type, name):
 def main():
     args = get_args()
 
-    si = SmartConnect(host=args.host,
+    si = SmartConnectNoSSL(host=args.host,
                       user=args.user,
                       pwd=args.password,
                       port=int(args.port))

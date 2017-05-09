@@ -18,7 +18,7 @@ import atexit
 
 import requests
 
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 
 from tools import cli
 
@@ -45,7 +45,7 @@ args = setup_args()
 si = None
 instance_search = False
 try:
-    si = SmartConnect(host=args.host,
+    si = SmartConnectNoSSL(host=args.host,
                       user=args.user,
                       pwd=args.password,
                       port=int(args.port))

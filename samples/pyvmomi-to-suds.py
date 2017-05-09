@@ -82,7 +82,7 @@ def get_current_session(client):
 
 print "pyVmomi login... "
 
-si = connect.SmartConnect(host=args.host,
+si = connect.SmartConnectNoSSL(host=args.host,
                           user=args.user,
                           pwd=password,
                           port=int(args.port))

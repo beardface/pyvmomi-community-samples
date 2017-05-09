@@ -65,7 +65,7 @@ def main():
     context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
     context.verify_mode = ssl.CERT_NONE
 
-    service_instance = connect.SmartConnect(host=args.host,
+    service_instance = connect.SmartConnectNoSSL(host=args.host,
                                             user=args.user,
                                             pwd=args.password,
                                             port=int(args.port),

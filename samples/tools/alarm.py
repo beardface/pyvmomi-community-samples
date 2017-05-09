@@ -34,7 +34,7 @@ def reset_alarm(**kwargs):
     and from groovy now to python.
 
     Usage:
-    SI = SmartConnect(xxx)
+    SI = SmartConnectNoSSL(xxx)
     HOST = SI.content.searchIndex.FindByxxx(xxx)
     alarm.reset_alarm(entity_moref=HOST._moId, entity_type='HostSystem',
                       alarm_moref='alarm-1', service_instance=SI)

@@ -90,7 +90,7 @@ def main():
         sslContext.verify_mode = ssl.CERT_NONE
 
     try:
-        service_instance = connect.SmartConnect(host=args.host,
+        service_instance = connect.SmartConnectNoSSL(host=args.host,
                                                 user=args.user,
                                                 pwd=args.password,
                                                 port=int(args.port),

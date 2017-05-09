@@ -82,7 +82,7 @@ def new_cdrom_spec(controller_key, backing):
 
 def main():
     args = setup_args()
-    si = SmartConnect(host=args.host, user=args.user, pwd=args.password)
+    si = SmartConnectNoSSL(host=args.host, user=args.user, pwd=args.password)
     if args.datacenter:
         dc = get_dc(si, args.datacenter)
     else:

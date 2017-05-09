@@ -11,7 +11,7 @@ from __future__ import print_function
 
 import atexit
 
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 
 from tools import alarm
 from tools import cli
@@ -28,7 +28,7 @@ PARSER.add_argument("-x", "--uuid",
                          " for.")
 MY_ARGS = PARSER.parse_args()
 cli.prompt_for_password(MY_ARGS)
-SI = SmartConnect(host=MY_ARGS.host,
+SI = SmartConnectNoSSL(host=MY_ARGS.host,
                   user=MY_ARGS.user,
                   pwd=MY_ARGS.password,
                   port=MY_ARGS.port)

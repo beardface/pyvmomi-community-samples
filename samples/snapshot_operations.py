@@ -35,7 +35,7 @@ import ssl
 from pyVmomi import vim, vmodl
 from pyVim.task import WaitForTask
 from pyVim import connect
-from pyVim.connect import Disconnect, SmartConnect, GetSi
+from pyVim.connect import Disconnect, SmartConnectNoSSL, GetSi
 
 inputs = {'vcenter_ip': '192.168.1.10',
           'vcenter_password': 'my_password',

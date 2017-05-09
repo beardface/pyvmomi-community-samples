@@ -12,7 +12,7 @@ import requests.packages.urllib3 as urllib3
 import ssl
 
 from pyVmomi import vim
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 
 from tools import cli
 from tools import tasks
@@ -103,14 +103,14 @@ def main():
         context.verify_mode = ssl.CERT_NONE
     if context:
         # Python >= 2.7.9
-        si = SmartConnect(host=args.host,
+        si = SmartConnectNoSSL(host=args.host,
                           port=int(args.port),
                           user=args.user,
                           pwd=args.password,
                           sslContext=context)
     else:
         # Python >= 2.7.7
-        si = SmartConnect(host=args.host,
+        si = SmartConnectNoSSL(host=args.host,
                           port=int(args.port),
                           user=args.user,
                           pwd=args.password)

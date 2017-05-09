@@ -22,7 +22,7 @@ or more types
 
 
 from tools import serviceutil
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 from pyVmomi import vim, vmodl
 
 import argparse
@@ -259,7 +259,7 @@ def main():
             from requests.packages import urllib3
             urllib3.disable_warnings()
 
-        si = SmartConnect(host=args.host, user=args.user, pwd=password,
+        si = SmartConnectNoSSL(host=args.host, user=args.user, pwd=password,
                           port=int(args.port))
 
         if not si:

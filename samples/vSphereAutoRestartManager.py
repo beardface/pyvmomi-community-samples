@@ -22,7 +22,7 @@ __author__ = 'humayunjamal'
 
 def get_connection(ipadd, user, password):
     try:
-        connection = SmartConnect(
+        connection = SmartConnectNoSSL(
             host=ipadd, port=443, user=user, pwd=password)
     except Exception as e:
         print e

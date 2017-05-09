@@ -8,7 +8,7 @@ This code has been released under the terms of the Apache-2.0 license
 http://opensource.org/licenses/Apache-2.0
 """
 from __future__ import print_function
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 from pyVmomi import vim
 import atexit
 import sys
@@ -90,7 +90,7 @@ def AddHostPortgroup(host, vswitchName, portgroupName, vlanId):
 
 def main():
     args = get_args()
-    serviceInstance = SmartConnect(host=args.host,
+    serviceInstance = SmartConnectNoSSL(host=args.host,
                                    user=args.user,
                                    pwd=args.password,
                                    port=443)

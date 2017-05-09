@@ -63,7 +63,7 @@ if __name__ == "__main__":
                         help="Name of the Datacenter to create.")
     MY_ARGS = PARSER.parse_args()
     cli.prompt_for_password(MY_ARGS)
-    SI = connect.SmartConnect(host=MY_ARGS.host,
+    SI = connect.SmartConnectNoSSL(host=MY_ARGS.host,
                               user=MY_ARGS.user,
                               pwd=MY_ARGS.password,
                               port=MY_ARGS.port)

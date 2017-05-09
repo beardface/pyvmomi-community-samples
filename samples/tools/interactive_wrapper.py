@@ -34,7 +34,7 @@ class VVC(object):
         """
         if not password:
             password = getpass("Password for {0}: ".format(self.hostname))
-        self.service_instance = connect.SmartConnect(host=self.hostname,
+        self.service_instance = connect.SmartConnectNoSSL(host=self.hostname,
                                                      user=username,
                                                      pwd=password,
                                                      port=443)

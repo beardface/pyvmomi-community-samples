@@ -18,7 +18,7 @@ import ssl
 import threading
 from time import sleep
 import requests
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 from pyVmomi import vim
 from tools import cli
 import atexit
@@ -166,7 +166,7 @@ def main():
     # ssl context
     ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
     # connect to vc
-    si = SmartConnect(
+    si = SmartConnectNoSSL(
         host=args.host,
         user=args.user,
         pwd=args.password,

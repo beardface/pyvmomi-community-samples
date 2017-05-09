@@ -12,7 +12,7 @@ http://opensource.org/licenses/Apache-2.0
 from pyVmomi import vim
 from pyVmomi import vmodl
 from tools import tasks
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 import atexit
 import argparse
 import getpass
@@ -121,7 +121,7 @@ def main():
     args = get_args()
 
     # connect this thing
-    serviceInstance = SmartConnect(
+    serviceInstance = SmartConnectNoSSL(
             host=args.host,
             user=args.user,
             pwd=args.password,

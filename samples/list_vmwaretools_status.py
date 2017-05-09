@@ -15,7 +15,7 @@ import atexit
 import requests
 from tools import cli
 from pyVmomi import vim
-from pyVim.connect import SmartConnect, Disconnect
+from pyVim.connect import SmartConnectNoSSL, Disconnect
 
 _columns_four = "{0:<20} {1:<30} {2:<30} {3:<20}"
 
@@ -63,7 +63,7 @@ def main():
     args = get_args()
 
     # connect to vc
-    si = SmartConnect(
+    si = SmartConnectNoSSL(
         host=args.host,
         user=args.user,
         pwd=args.password,
